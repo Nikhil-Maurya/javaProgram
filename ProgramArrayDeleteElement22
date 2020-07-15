@@ -1,0 +1,42 @@
+public class ArrayDeleteElement {
+
+	public static void main(String[] args) {
+		int pos = 2;
+		int a[] = { 1, 4, 5, 7, 9, 8, 7 };
+		System.out.print(" a: ");
+		for (int i = 0; i < a.length; i++) {
+			System.out.print(a[i] + " ");
+		}
+
+		System.out.println();
+		
+		System.out.println("after removing position: " + pos);
+		int b[] = insertElement(a, pos);
+		for (int i = 0; i < b.length; i++) {
+			System.out.print(b[i] + " ");
+		}
+
+	}
+
+	static int[] insertElement(int[] a, int pos) {
+
+		int[] b = new int[a.length - 1];
+
+		for (int i = 0, j = 0; i < a.length;) {
+
+			if (i == pos) {
+
+				b[j] = a[i];
+				System.out.println("removed element: "+a[i]);
+				i++;
+			} else {
+				b[j] = a[i];
+				i++;
+				j++;
+			}
+		}
+		return b;
+
+	}
+
+}
